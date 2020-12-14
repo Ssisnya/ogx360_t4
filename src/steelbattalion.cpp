@@ -80,17 +80,17 @@ void steelbattalion_task(KeyboardController *kb, MouseController *m, JoystickCon
 
         if (is_key_pressed(KEY_W, 0))         sb_data.rightPedal  = 0xFFFF;
         if (is_key_pressed(KEY_S, 0))         sb_data.middlePedal = 0xFFFF;
-        if (is_key_pressed(KEY_SPACE, 0))     sb_data.leftPedal = 0xFFFF;
-        if (is_key_pressed(KEY_A, 0))         sb_data.rotationLever = INT16_MIN;
-        if (is_key_pressed(KEY_D, 0))         sb_data.rotationLever = INT16_MAX;
+        if (is_key_pressed(KEY_SPACE, 0))     sb_data.leftPedal = 0xFFFF;//
+        if (is_key_pressed(KEY_A, 0))         sb_data.rotationLever = INT16_MIN;//
+        if (is_key_pressed(KEY_D, 0))         sb_data.rotationLever = INT16_MAX;//
 
-        if (is_key_pressed(KEY_Q, 1))         sb_data.gearLever -= (sb_data.gearLever > 7) ? 1 : 0;
-        if (is_key_pressed(KEY_E, 1))         sb_data.gearLever += (sb_data.gearLever < 13) ? 1 : 0;
+        if (is_key_pressed(KEY_Q, 1))         sb_data.gearLever -= (sb_data.gearLever > 7) ? 1 : 0;//
+        if (is_key_pressed(KEY_E, 1))         sb_data.gearLever += (sb_data.gearLever < 13) ? 1 : 0;//
 
-        if (is_key_pressed(KEY_R, 0))         sb_data.dButtons[1] |= CXBX_SBC_GAMEPAD_W1_WEAPONCONMAGAZINE;
+        if (is_key_pressed(KEY_R, 0))         sb_data.dButtons[1] |= CXBX_SBC_GAMEPAD_W1_WEAPONCONMAGAZINE;//
         if (is_key_pressed(KEY_F, 0))         sb_data.dButtons[1] |= CXBX_SBC_GAMEPAD_W1_EXTINGUISHER;
         if (is_key_pressed(KEY_TAB, 0))       sb_data.dButtons[1] |= CXBX_SBC_GAMEPAD_W1_CHAFF;
-        if (is_key_pressed(KEY_C, 0))         sb_data.dButtons[1] |= CXBX_SBC_GAMEPAD_W1_WASHING;
+        if (is_key_pressed(KEY_C, 0))         sb_data.dButtons[1] |= CXBX_SBC_GAMEPAD_W1_WASHING;//
         if (is_key_pressed(KEY_F1, 0))        sb_data.dButtons[1] |= CXBX_SBC_GAMEPAD_W1_FUNCTIONF1;
         if (is_key_pressed(KEY_F2, 0))        sb_data.dButtons[1] |= CXBX_SBC_GAMEPAD_W1_FUNCTIONF2;
         if (is_key_pressed(KEY_F3, 0))        sb_data.dButtons[1] |= CXBX_SBC_GAMEPAD_W1_FUNCTIONF3;
@@ -103,13 +103,13 @@ void steelbattalion_task(KeyboardController *kb, MouseController *m, JoystickCon
 
         if (is_key_pressed(KEY_CAPS_LOCK, 0))
         {
-            if (is_key_pressed(KEY_UP, 1))    sb_data.tunerDial += (sb_data.tunerDial < 15) ? 1 : -15;
-            if (is_key_pressed(KEY_DOWN, 1))  sb_data.tunerDial -= (sb_data.tunerDial > 0) ? 1 : -15;
-            if (is_key_pressed(KEY_1, 0))     sb_data.dButtons[1] |= CXBX_SBC_GAMEPAD_W1_COMM1;
-            if (is_key_pressed(KEY_2, 0))     sb_data.dButtons[1] |= CXBX_SBC_GAMEPAD_W1_COMM2;
-            if (is_key_pressed(KEY_3, 0))     sb_data.dButtons[1] |= CXBX_SBC_GAMEPAD_W1_COMM3;
-            if (is_key_pressed(KEY_4, 0))     sb_data.dButtons[1] |= CXBX_SBC_GAMEPAD_W1_COMM4;
-            if (is_key_pressed(KEY_5, 0))     sb_data.dButtons[2] |= CXBX_SBC_GAMEPAD_W2_COMM5;
+            if (is_key_pressed(KEY_P, 1))     sb_data.tunerDial += (sb_data.tunerDial < 15) ? 1 : -15;
+            if (is_key_pressed(KEY_O, 1))     sb_data.tunerDial -= (sb_data.tunerDial > 0) ? 1 : -15;
+            if (is_key_pressed(KEY_6, 0))     sb_data.dButtons[1] |= CXBX_SBC_GAMEPAD_W1_COMM1;
+            if (is_key_pressed(KEY_7, 0))     sb_data.dButtons[1] |= CXBX_SBC_GAMEPAD_W1_COMM2;
+            if (is_key_pressed(KEY_8, 0))     sb_data.dButtons[1] |= CXBX_SBC_GAMEPAD_W1_COMM3;
+            if (is_key_pressed(KEY_9, 0))     sb_data.dButtons[1] |= CXBX_SBC_GAMEPAD_W1_COMM4;
+            if (is_key_pressed(KEY_0, 0))     sb_data.dButtons[2] |= CXBX_SBC_GAMEPAD_W2_COMM5;
         }
         else
         {
@@ -119,7 +119,7 @@ void steelbattalion_task(KeyboardController *kb, MouseController *m, JoystickCon
             if (is_key_pressed(KEY_4, 1))     sb_data.dButtons[2] ^= CXBX_SBC_GAMEPAD_W2_TOGGLEBUFFREMATERIAL;
             if (is_key_pressed(KEY_5, 1))     sb_data.dButtons[2] ^= CXBX_SBC_GAMEPAD_W2_TOGGLEVTLOCATION;
             //if (is_key_pressed(KEY_RIGHT, 1)) sb_data.dButtons[2] |=  0xFFFC; //All toggles on
-            //if (is_key_pressed(KEY_LEFT, 1))  sb_data.dButtons[2] &= ~0xFFFC; //All tolgges off
+            //if (is_key_pressed(KEY_LEFT, 1))  sb_data.dButtons[2] &= ~0xFFFC; //All tolgges off    
             if (is_key_pressed(KEY_LEFT, 0))  sb_data.sightChangeX = INT16_MIN;
             if (is_key_pressed(KEY_RIGHT, 0)) sb_data.sightChangeX = INT16_MAX;
             if (is_key_pressed(KEY_UP, 0))    sb_data.sightChangeY = INT16_MIN;
@@ -128,15 +128,15 @@ void steelbattalion_task(KeyboardController *kb, MouseController *m, JoystickCon
 
         if (is_key_pressed(KEY_ESC, 0))       sb_data.dButtons[0] |= CXBX_SBC_GAMEPAD_W0_EJECT;
         if (is_key_pressed(KEY_BACKSPACE, 0)) sb_data.dButtons[0] |= CXBX_SBC_GAMEPAD_W0_EJECT;
-        if (is_key_pressed(KEY_H, 0))         sb_data.dButtons[0] |= CXBX_SBC_GAMEPAD_W0_COCKPITHATCH;
-        if (is_key_pressed(KEY_BACKSLASH, 0)) sb_data.dButtons[0] |= CXBX_SBC_GAMEPAD_W0_IGNITION;
-        if (is_key_pressed(KEY_ENTER, 0))     sb_data.dButtons[0] |= CXBX_SBC_GAMEPAD_W0_START;
+        if (is_key_pressed(KEY_F10, 0))       sb_data.dButtons[0] |= CXBX_SBC_GAMEPAD_W0_COCKPITHATCH;
+        if (is_key_pressed(KEY_F11, 0))       sb_data.dButtons[0] |= CXBX_SBC_GAMEPAD_W0_IGNITION;
+        if (is_key_pressed(KEY_F12, 0))       sb_data.dButtons[0] |= CXBX_SBC_GAMEPAD_W0_START;
 
         if (is_key_pressed(KEY_M, 0))         sb_data.dButtons[0] |= CXBX_SBC_GAMEPAD_W0_MULTIMONOPENCLOSE;
         if (is_key_pressed(KEY_COMMA, 0))     sb_data.dButtons[0] |= CXBX_SBC_GAMEPAD_W0_MAINMONZOOMOUT;
         if (is_key_pressed(KEY_PERIOD, 0))    sb_data.dButtons[0] |= CXBX_SBC_GAMEPAD_W0_MAINMONZOOMIN;
-        if (is_key_pressed(KEY_B, 0))         sb_data.dButtons[0] |= CXBX_SBC_GAMEPAD_W0_MULTIMONMODESELECT;
-        if (is_key_pressed(KEY_N, 0))         sb_data.dButtons[0] |= CXBX_SBC_GAMEPAD_W0_MULTIMONSUBMONITOR;
+        if (is_key_pressed(KEY_K, 0))         sb_data.dButtons[0] |= CXBX_SBC_GAMEPAD_W0_MULTIMONMODESELECT;
+        if (is_key_pressed(KEY_L, 0))         sb_data.dButtons[0] |= CXBX_SBC_GAMEPAD_W0_MULTIMONSUBMONITOR;
         if (is_key_pressed(KEY_Z, 0))         sb_data.dButtons[0] |= CXBX_SBC_GAMEPAD_W0_MULTIMONMAPZOOMINOUT;
 
         if (m->getWheel() > 0)                sb_data.dButtons[1] |= CXBX_SBC_GAMEPAD_W1_WEAPONCONMAIN;
